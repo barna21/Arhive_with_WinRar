@@ -1,0 +1,9 @@
+C:\Users\Barni\Desktop\GitHub\WinRar\WinRar\bin\Debug\WinRar.exe.config
+C:\Users\Barni\Desktop\GitHub\WinRar\WinRar\bin\Debug\WinRar.exe
+C:\Users\Barni\Desktop\GitHub\WinRar\WinRar\bin\Debug\WinRar.pdb
+C:\Users\Barni\Desktop\GitHub\WinRar\WinRar\obj\Debug\WinRar.Form1.resources
+C:\Users\Barni\Desktop\GitHub\WinRar\WinRar\obj\Debug\WinRar.Properties.Resources.resources
+C:\Users\Barni\Desktop\GitHub\WinRar\WinRar\obj\Debug\WinRar.csproj.GenerateResource.cache
+C:\Users\Barni\Desktop\GitHub\WinRar\WinRar\obj\Debug\WinRar.exe
+C:\Users\Barni\Desktop\GitHub\WinRar\WinRar\obj\Debug\WinRar.pdb
+C:\Users\Barni\Desktop\GitHub\WinRar\WinRar\obj\Debug\WinRar.csprojAssemblyReference.cache
