@@ -15,3 +15,4 @@ C:\Users\Barni\Desktop\GitHub\ArhiveWinRar\WinRar\obj\Debug\WinRar.Properties.Re
 C:\Users\Barni\Desktop\GitHub\ArhiveWinRar\WinRar\obj\Debug\WinRar.csproj.GenerateResource.cache
 C:\Users\Barni\Desktop\GitHub\ArhiveWinRar\WinRar\obj\Debug\WinRar.exe
 C:\Users\Barni\Desktop\GitHub\ArhiveWinRar\WinRar\obj\Debug\WinRar.pdb
+C:\Users\Barni\Desktop\GitHub\ArhiveWinRar\WinRar\obj\Debug\WinRar.csprojAssemblyReference.cache

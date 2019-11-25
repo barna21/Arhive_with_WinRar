@@ -89,7 +89,11 @@ namespace WinRar
             listViewFolders.FullRowSelect = true;
             CheckForIllegalCrossThreadCalls = false;
 
-            txtBoxLocationLoad.Text = File.ReadAllText("location.loc");
+            string loadData = File.ReadAllText("location.loc");
+            string[] loadFoxusLocation = loadData.Split('|');
+
+            txtBoxLocationLoad.Text = loadFoxusLocation[0];
+            txtBoxDezRar.Text = loadFoxusLocation[1];
         }
 
         private void btnArhiveLoop_Click(object sender, EventArgs e)
@@ -241,7 +245,17 @@ namespace WinRar
 
         private void btnSaveLocation_Click(object sender, EventArgs e)
         {
-            File.WriteAllText("location.loc", txtBoxLocationLoad.Text);
+            File.WriteAllText("location.loc", txtBoxLocationLoad.Text + "|" + txtBoxDezRar.Text);
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            File.WriteAllText("location.loc", txtBoxLocationLoad.Text + "|" + txtBoxDezRar.Text);
+        }
+
+        private void btnLoadRar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
