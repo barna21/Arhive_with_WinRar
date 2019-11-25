@@ -87,6 +87,7 @@ namespace WinRar
         private void Form1_Load(object sender, EventArgs e)
         {
             listViewFolders.FullRowSelect = true;
+            listViewRar.FullRowSelect = true;
             CheckForIllegalCrossThreadCalls = false;
 
             string loadData = File.ReadAllText("location.loc");
@@ -255,6 +256,21 @@ namespace WinRar
 
         private void btnLoadRar_Click(object sender, EventArgs e)
         {
+            //add RAR
+            DirectoryInfo FileNm = new DirectoryInfo(txtBoxDezRar.Text);
+            var filename = FileNm.GetFiles("*.rar");
+            listViewRar.Items.Clear();
+
+            foreach (FileInfo f in filename)
+            {
+                //listViewRar.Items.Add(f.ToString());
+                ListViewItem item = new ListViewItem(f.ToString());
+                item.SubItems.Add(txtBoxDezRar.Text + "/" + f.ToString());
+                listViewRar.Items.Add(item);
+            }
+
+            lblArhiveGasite.Text = listViewRar.Items.Count.ToString();
+
 
         }
     }

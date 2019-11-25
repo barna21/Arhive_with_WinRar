@@ -51,7 +51,7 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.listViewRar = new System.Windows.Forms.ListView();
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.progressBar2 = new System.Windows.Forms.ProgressBar();
@@ -66,7 +66,7 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
+            this.lblArhiveGasite = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -285,7 +285,7 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.tabPage2.Controls.Add(this.listView1);
+            this.tabPage2.Controls.Add(this.listViewRar);
             this.tabPage2.Controls.Add(this.progressBar2);
             this.tabPage2.Controls.Add(this.label6);
             this.tabPage2.Controls.Add(this.btnSave);
@@ -298,7 +298,7 @@
             this.tabPage2.Controls.Add(this.textBox2);
             this.tabPage2.Controls.Add(this.label9);
             this.tabPage2.Controls.Add(this.label10);
-            this.tabPage2.Controls.Add(this.label11);
+            this.tabPage2.Controls.Add(this.lblArhiveGasite);
             this.tabPage2.Controls.Add(this.label12);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
@@ -307,18 +307,18 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Dezarhivare";
             // 
-            // listView1
+            // listViewRar
             // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.listViewRar.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader3,
             this.columnHeader4});
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(11, 32);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(689, 331);
-            this.listView1.TabIndex = 20;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
+            this.listViewRar.HideSelection = false;
+            this.listViewRar.Location = new System.Drawing.Point(11, 32);
+            this.listViewRar.Name = "listViewRar";
+            this.listViewRar.Size = new System.Drawing.Size(689, 331);
+            this.listViewRar.TabIndex = 20;
+            this.listViewRar.UseCompatibleStateImageBehavior = false;
+            this.listViewRar.View = System.Windows.Forms.View.Details;
             // 
             // columnHeader3
             // 
@@ -438,15 +438,15 @@
             this.label10.TabIndex = 21;
             this.label10.Text = "Pacienti gasiti:";
             // 
-            // label11
+            // lblArhiveGasite
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(801, 43);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(16, 16);
-            this.label11.TabIndex = 22;
-            this.label11.Text = "0";
+            this.lblArhiveGasite.AutoSize = true;
+            this.lblArhiveGasite.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblArhiveGasite.Location = new System.Drawing.Point(801, 43);
+            this.lblArhiveGasite.Name = "lblArhiveGasite";
+            this.lblArhiveGasite.Size = new System.Drawing.Size(16, 16);
+            this.lblArhiveGasite.TabIndex = 22;
+            this.lblArhiveGasite.Text = "0";
             // 
             // label12
             // 
@@ -501,7 +501,7 @@
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView listViewRar;
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.ProgressBar progressBar2;
@@ -516,7 +516,7 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label lblArhiveGasite;
         private System.Windows.Forms.Label label12;
     }
 }
