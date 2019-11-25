@@ -21,6 +21,7 @@ namespace WinRar
         }
 
         Thread Thread_ARHIVARE;
+        Thread Thread_DEZARHIVARE;
 
         public string FolderDezArhivat = @"C:\Users\Barni\Downloads\03Toamna.rar";
         public string DeArhivat = @"C:\Users\Barni\Downloads\03Toamna\";
@@ -272,6 +273,148 @@ namespace WinRar
             lblArhiveGasite.Text = listViewRar.Items.Count.ToString();
 
 
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Thread_DEZARHIVARE = new Thread(DEZARHIVARE);
+            Thread_DEZARHIVARE.Start();
+        }
+
+        public void DEZARHIVARE()
+        {
+            checkBoxStergereDupaDezRAR.Enabled = false;
+
+            if (txtBoxLimitaDez.Text == "0")
+            {
+                LimitatOrNot = 0;
+                progressBarDezarhivare.Maximum = listViewRar.Items.Count;
+                DezarhivarePropriuzisa();
+            }
+            else
+            {
+                LimitatOrNot = 1;
+                progressBarDezarhivare.Maximum = Convert.ToInt32(txtBoxLimitaDez.Text);
+                DezarhivarePropriuzisa();
+            }
+
+            checkBoxStergereDupaDezRAR.Enabled = true;
+        }
+
+        public void DezarhivarePropriuzisa()
+        {
+            if (LimitatOrNot == 0)
+            {
+                for (int x = 0; x < listViewRar.Items.Count; x++)
+                {
+                    listViewRar.SelectedItems.Clear();
+
+                    progressBarDezarhivare.Value = x + 1;
+                    lblDezarhivati.Text = Convert.ToString(x + 1);
+
+                    this.Focus();
+                    listViewRar.Focus();
+
+                    listViewRar.Items[x].Selected = true;
+                    listViewRar.Items[x].Focused = true;
+                    listViewRar.Select();
+                    listViewRar.EnsureVisible(x);
+
+                    string targetArchiveName = txtBoxLocationLoad.Text + "/" + listViewRar.Items[x].SubItems[0].Text,
+                    targetFile = listViewRar.Items[x].SubItems[1].Text;
+                    ProcessStartInfo startInfo = new ProcessStartInfo("WinRAR.exe");
+                    startInfo.WindowStyle = ProcessWindowStyle.Maximized;
+                    //startInfo.Arguments = string.Format("a -m5 \"{0}\" \"{1}\"", targetArchiveName, targetFile);
+                    startInfo.Arguments = string.Format("x -s \"{0}\" \"{1}\"", targetArchiveName, targetFile);
+
+                    try
+                    {
+                        // Start the process with the info we specified.
+                        using (Process exeProcess = Process.Start(startInfo))
+                        {
+                            exeProcess.WaitForExit();
+                        }
+                    }
+                    catch
+                    {
+                        {
+                            MessageBox.Show("Error Open");
+                        }
+                    }
+
+                    if (checkBoxDeleteFolder.Checked == true)
+                    {
+                        if (File.Exists(txtBoxLocationLoad.Text + "/" + listViewRar.Items[x].SubItems[0].Text + ".rar"))
+                        {
+                            try
+                            {
+                                Directory.Delete(txtBoxLocationLoad.Text + "/" + listViewRar.Items[x].SubItems[0].Text, true);
+                            }
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show(ex.ToString());
+                            }
+                        }
+                    }
+                }
+            }
+            else
+            {
+                for (int x = 0; x < Convert.ToInt32(txtBoxArhivePac.Text); x++)
+                {
+                    listViewRar.SelectedItems.Clear();
+
+                    progressBarDezarhivare.Value = x + 1;
+                    lblDezarhivati.Text = Convert.ToString(x + 1);
+
+                    this.Focus();
+                    listViewRar.Focus();
+
+                    listViewRar.Items[x].Selected = true;
+                    listViewRar.Items[x].Focused = true;
+                    listViewRar.Select();
+                    listViewRar.EnsureVisible(x);
+
+                    string targetArchiveName = txtBoxLocationLoad.Text + "/" + listViewRar.Items[x].SubItems[0].Text,
+                    targetFile = listViewRar.Items[x].SubItems[1].Text;
+                    ProcessStartInfo startInfo = new ProcessStartInfo("WinRAR.exe");
+                    startInfo.WindowStyle = ProcessWindowStyle.Maximized;
+                    startInfo.Arguments = string.Format("x -s \"{0}\" \"{1}\"", targetArchiveName, targetFile);
+                    try
+                    {
+                        // Start the process with the info we specified.
+                        using (Process exeProcess = Process.Start(startInfo))
+                        {
+                            exeProcess.WaitForExit();
+                        }
+                    }
+                    catch
+                    {
+                        {
+                            MessageBox.Show("Error Open");
+                        }
+                    }
+
+                    if (checkBoxDeleteFolder.Checked == true)
+                    {
+                        if (File.Exists(txtBoxLocationLoad.Text + "/" + listViewRar.Items[x].SubItems[0].Text + ".rar"))
+                        {
+                            try
+                            {
+                                Directory.Delete(txtBoxLocationLoad.Text + "/" + listViewRar.Items[x].SubItems[0].Text, true);
+                            }
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show(ex.ToString());
+                            }
+                        }
+                    }
+                }
+            }
+
+            MessageBox.Show("Dezarhivarea s-a terminat cu succes", "Arhivare completa", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            progressBarDezarhivare.Value = 0;
+            checkBoxStergereDupaDezRAR.Enabled = true;
         }
     }
 }

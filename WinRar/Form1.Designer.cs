@@ -54,16 +54,16 @@
             this.listViewRar = new System.Windows.Forms.ListView();
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.progressBar2 = new System.Windows.Forms.ProgressBar();
-            this.label6 = new System.Windows.Forms.Label();
+            this.progressBarDezarhivare = new System.Windows.Forms.ProgressBar();
+            this.lblDezarhivati = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.txtBoxDezRar = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.btnLoadRar = new System.Windows.Forms.Button();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.checkBoxStergereDupaDezRAR = new System.Windows.Forms.CheckBox();
+            this.txtBoxLimitaDez = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.lblArhiveGasite = new System.Windows.Forms.Label();
@@ -286,16 +286,16 @@
             // 
             this.tabPage2.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.tabPage2.Controls.Add(this.listViewRar);
-            this.tabPage2.Controls.Add(this.progressBar2);
-            this.tabPage2.Controls.Add(this.label6);
+            this.tabPage2.Controls.Add(this.progressBarDezarhivare);
+            this.tabPage2.Controls.Add(this.lblDezarhivati);
             this.tabPage2.Controls.Add(this.btnSave);
             this.tabPage2.Controls.Add(this.label7);
             this.tabPage2.Controls.Add(this.txtBoxDezRar);
             this.tabPage2.Controls.Add(this.label8);
             this.tabPage2.Controls.Add(this.button4);
             this.tabPage2.Controls.Add(this.btnLoadRar);
-            this.tabPage2.Controls.Add(this.checkBox1);
-            this.tabPage2.Controls.Add(this.textBox2);
+            this.tabPage2.Controls.Add(this.checkBoxStergereDupaDezRAR);
+            this.tabPage2.Controls.Add(this.txtBoxLimitaDez);
             this.tabPage2.Controls.Add(this.label9);
             this.tabPage2.Controls.Add(this.label10);
             this.tabPage2.Controls.Add(this.lblArhiveGasite);
@@ -330,22 +330,22 @@
             this.columnHeader4.Text = "Path";
             this.columnHeader4.Width = 776;
             // 
-            // progressBar2
+            // progressBarDezarhivare
             // 
-            this.progressBar2.Location = new System.Drawing.Point(6, 369);
-            this.progressBar2.Name = "progressBar2";
-            this.progressBar2.Size = new System.Drawing.Size(945, 18);
-            this.progressBar2.TabIndex = 28;
+            this.progressBarDezarhivare.Location = new System.Drawing.Point(6, 369);
+            this.progressBarDezarhivare.Name = "progressBarDezarhivare";
+            this.progressBarDezarhivare.Size = new System.Drawing.Size(945, 18);
+            this.progressBarDezarhivare.TabIndex = 28;
             // 
-            // label6
+            // lblDezarhivati
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(801, 75);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(16, 16);
-            this.label6.TabIndex = 30;
-            this.label6.Text = "0";
+            this.lblDezarhivati.AutoSize = true;
+            this.lblDezarhivati.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDezarhivati.Location = new System.Drawing.Point(810, 75);
+            this.lblDezarhivati.Name = "lblDezarhivati";
+            this.lblDezarhivati.Size = new System.Drawing.Size(16, 16);
+            this.lblDezarhivati.TabIndex = 30;
+            this.lblDezarhivati.Text = "0";
             // 
             // btnSave
             // 
@@ -362,9 +362,9 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(710, 77);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(85, 13);
+            this.label7.Size = new System.Drawing.Size(102, 13);
             this.label7.TabIndex = 29;
-            this.label7.Text = "Pacienti arhivati:";
+            this.label7.Text = "Pacienti dezarhivati:";
             // 
             // txtBoxDezRar
             // 
@@ -391,6 +391,7 @@
             this.button4.TabIndex = 27;
             this.button4.Text = "Dezarhivare LISTA";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // btnLoadRar
             // 
@@ -402,23 +403,23 @@
             this.btnLoadRar.UseVisualStyleBackColor = true;
             this.btnLoadRar.Click += new System.EventHandler(this.btnLoadRar_Click);
             // 
-            // checkBox1
+            // checkBoxStergereDupaDezRAR
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(709, 171);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(174, 17);
-            this.checkBox1.TabIndex = 26;
-            this.checkBox1.Text = "Dupa dezarhivare sterge arhiva";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBoxStergereDupaDezRAR.AutoSize = true;
+            this.checkBoxStergereDupaDezRAR.Location = new System.Drawing.Point(709, 171);
+            this.checkBoxStergereDupaDezRAR.Name = "checkBoxStergereDupaDezRAR";
+            this.checkBoxStergereDupaDezRAR.Size = new System.Drawing.Size(174, 17);
+            this.checkBoxStergereDupaDezRAR.TabIndex = 26;
+            this.checkBoxStergereDupaDezRAR.Text = "Dupa dezarhivare sterge arhiva";
+            this.checkBoxStergereDupaDezRAR.UseVisualStyleBackColor = true;
             // 
-            // textBox2
+            // txtBoxLimitaDez
             // 
-            this.textBox2.Location = new System.Drawing.Point(813, 145);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(88, 20);
-            this.textBox2.TabIndex = 24;
-            this.textBox2.Text = "0";
+            this.txtBoxLimitaDez.Location = new System.Drawing.Point(813, 145);
+            this.txtBoxLimitaDez.Name = "txtBoxLimitaDez";
+            this.txtBoxLimitaDez.Size = new System.Drawing.Size(88, 20);
+            this.txtBoxLimitaDez.TabIndex = 24;
+            this.txtBoxLimitaDez.Text = "0";
             // 
             // label9
             // 
@@ -442,7 +443,7 @@
             // 
             this.lblArhiveGasite.AutoSize = true;
             this.lblArhiveGasite.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblArhiveGasite.Location = new System.Drawing.Point(801, 43);
+            this.lblArhiveGasite.Location = new System.Drawing.Point(810, 43);
             this.lblArhiveGasite.Name = "lblArhiveGasite";
             this.lblArhiveGasite.Size = new System.Drawing.Size(16, 16);
             this.lblArhiveGasite.TabIndex = 22;
@@ -504,16 +505,16 @@
         private System.Windows.Forms.ListView listViewRar;
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
-        private System.Windows.Forms.ProgressBar progressBar2;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ProgressBar progressBarDezarhivare;
+        private System.Windows.Forms.Label lblDezarhivati;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtBoxDezRar;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button btnLoadRar;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.CheckBox checkBoxStergereDupaDezRAR;
+        private System.Windows.Forms.TextBox txtBoxLimitaDez;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label lblArhiveGasite;
