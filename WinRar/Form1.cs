@@ -88,6 +88,8 @@ namespace WinRar
         {
             listViewFolders.FullRowSelect = true;
             CheckForIllegalCrossThreadCalls = false;
+
+            txtBoxLocationLoad.Text = File.ReadAllText("location.loc");
         }
 
         private void btnArhiveLoop_Click(object sender, EventArgs e)
@@ -234,6 +236,11 @@ namespace WinRar
             MessageBox.Show("Arhivarea s-a terminat cu succes", "Arhivare completa", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             progressBar.Value = 0;
             checkBoxDeleteFolder.Enabled = true;
+        }
+
+        private void btnSaveLocation_Click(object sender, EventArgs e)
+        {
+            File.WriteAllText("location.loc", txtBoxLocationLoad.Text);
         }
     }
 }

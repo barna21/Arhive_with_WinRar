@@ -47,6 +47,7 @@
             this.progressBar = new System.Windows.Forms.ProgressBar();
             this.label5 = new System.Windows.Forms.Label();
             this.lblArhivatiCount = new System.Windows.Forms.Label();
+            this.btnSaveLocation = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -73,7 +74,7 @@
             // 
             this.txtBoxLocationLoad.Location = new System.Drawing.Point(96, 15);
             this.txtBoxLocationLoad.Name = "txtBoxLocationLoad";
-            this.txtBoxLocationLoad.Size = new System.Drawing.Size(775, 20);
+            this.txtBoxLocationLoad.Size = new System.Drawing.Size(707, 20);
             this.txtBoxLocationLoad.TabIndex = 2;
             this.txtBoxLocationLoad.Text = "\\\\10.200.10.65\\Archive\\XVI\\2014-12-06";
             // 
@@ -210,11 +211,22 @@
             this.lblArhivatiCount.TabIndex = 15;
             this.lblArhivatiCount.Text = "0";
             // 
+            // btnSaveLocation
+            // 
+            this.btnSaveLocation.Location = new System.Drawing.Point(806, 13);
+            this.btnSaveLocation.Name = "btnSaveLocation";
+            this.btnSaveLocation.Size = new System.Drawing.Size(65, 23);
+            this.btnSaveLocation.TabIndex = 16;
+            this.btnSaveLocation.Text = "Save";
+            this.btnSaveLocation.UseVisualStyleBackColor = true;
+            this.btnSaveLocation.Click += new System.EventHandler(this.btnSaveLocation_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(964, 420);
+            this.Controls.Add(this.btnSaveLocation);
             this.Controls.Add(this.lblArhivatiCount);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.progressBar);
@@ -261,6 +273,7 @@
         private System.Windows.Forms.ProgressBar progressBar;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label lblArhivatiCount;
+        private System.Windows.Forms.Button btnSaveLocation;
     }
 }
 
