@@ -324,8 +324,8 @@ namespace WinRar
                     targetFile = listViewRar.Items[x].SubItems[1].Text;
                     ProcessStartInfo startInfo = new ProcessStartInfo("WinRAR.exe");
                     startInfo.WindowStyle = ProcessWindowStyle.Maximized;
-                    //startInfo.Arguments = string.Format("a -m5 \"{0}\" \"{1}\"", targetArchiveName, targetFile);
-                    startInfo.Arguments = string.Format("x -s \"{0}\" \"{1}\"", targetArchiveName, targetFile);
+                    startInfo.Arguments = string.Format("a -ibck \"{0}\" \"{1}\"", targetArchiveName, targetFile);
+                   // startInfo.Arguments = string.Format("x -s \"{0}\" \"{1}\"", targetArchiveName, targetFile);
 
                     try
                     {
@@ -379,7 +379,7 @@ namespace WinRar
                     targetFile = listViewRar.Items[x].SubItems[1].Text;
                     ProcessStartInfo startInfo = new ProcessStartInfo("WinRAR.exe");
                     startInfo.WindowStyle = ProcessWindowStyle.Maximized;
-                    startInfo.Arguments = string.Format("x -s \"{0}\" \"{1}\"", targetArchiveName, targetFile);
+                    startInfo.Arguments = string.Format("x -ibck \"{0}\" \"{1}\"", targetArchiveName, targetFile);
                     try
                     {
                         // Start the process with the info we specified.
