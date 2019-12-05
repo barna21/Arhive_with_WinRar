@@ -23,12 +23,12 @@ namespace WinRar
         Thread Thread_ARHIVARE;
         Thread Thread_DEZARHIVARE;
 
-        public string FolderDezArhivat = @"C:\Users\Barni\Downloads\03Toamna.rar";
+        public string FolderDezArhivat = @"C:\Users\Barni\Desktop\GitHub\ArhiveWinRar\WinRar\bin\Debug\archive.rar";
         public string DeArhivat = @"C:\Users\Barni\Downloads\03Toamna\";
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string folder = Application.StartupPath + @"Xfolder";
+            //string folder = Application.StartupPath + "/archive.rar";
             System.Diagnostics.Process P_WinRar = new System.Diagnostics.Process();
             P_WinRar.StartInfo.FileName = @"C:\Program Files\WinRAR\WinRAR.exe";
             P_WinRar.StartInfo.CreateNoWindow = false;
@@ -44,7 +44,7 @@ namespace WinRar
             targetFile = @"C:\Users\Barni\Downloads\ArhivaTest\patient_AMS 4034";
             ProcessStartInfo startInfo = new ProcessStartInfo("WinRAR.exe");
             startInfo.WindowStyle = ProcessWindowStyle.Maximized;
-            startInfo.Arguments = string.Format("a -m5 \"{0}\" \"{1}\"",
+            startInfo.Arguments = string.Format("a -ep1 -m5 \"{0}\" \"{1}\"",
                                   targetArchiveName, targetFile);
             try
             {
@@ -320,13 +320,32 @@ namespace WinRar
                     listViewRar.Select();
                     listViewRar.EnsureVisible(x);
 
-                    string targetArchiveName = txtBoxLocationLoad.Text + "/" + listViewRar.Items[x].SubItems[0].Text,
+                    string denumire = listViewRar.Items[x].SubItems[0].Text;
+                    string denumireFaraExt = denumire.Remove(denumire.Length - 4, 4);
+                    string targetArchiveName = txtBoxLocationLoad.Text + "/" + denumireFaraExt,
                     targetFile = listViewRar.Items[x].SubItems[1].Text;
-                    ProcessStartInfo startInfo = new ProcessStartInfo("WinRAR.exe");
-                    startInfo.WindowStyle = ProcessWindowStyle.Maximized;
-                    startInfo.Arguments = string.Format("a -ibck \"{0}\" \"{1}\"", targetArchiveName, targetFile);
-                   // startInfo.Arguments = string.Format("x -s \"{0}\" \"{1}\"", targetArchiveName, targetFile);
+                    //ProcessStartInfo startInfo = new ProcessStartInfo("WinRAR.exe");
+                    //startInfo.WindowStyle = ProcessWindowStyle.Maximized;
+                    //startInfo.Arguments = string.Format("a -ibck \"{0}\" \"{1}\"", targetArchiveName, targetFile);
+                    // startInfo.Arguments = string.Format("x -s \"{0}\" \"{1}\"", targetArchiveName, targetFile);
 
+                    //System.Diagnostics.Process P_WinRar = new System.Diagnostics.Process();
+                    //P_WinRar.StartInfo.FileName = @"C:\Program Files\WinRAR\WinRAR.exe";
+                    //P_WinRar.StartInfo.CreateNoWindow = false;
+
+
+
+                    //P_WinRar.StartInfo.Arguments = string.Format("x -o+ \"{0}\" \"{1}\"", targetFile, targetArchiveName);
+                    //P_WinRar.EnableRaisingEvents = true;
+                    //P_WinRar.Start();
+
+                    //string targetArchiveName = txtBoxLocationLoad.Text + "/" + listViewRar.Items[x].SubItems[0].Text,
+                    //targetFile = listViewRar.Items[x].SubItems[1].Text;
+                    ProcessStartInfo startInfo = new ProcessStartInfo("WinRAR.exe");
+                    startInfo.CreateNoWindow = false;
+                    startInfo.WindowStyle = ProcessWindowStyle.Maximized;
+                    ////startInfo.Arguments = string.Format("x -ibck \"{0}\" \"{1}\"", targetArchiveName, targetFile);
+                    startInfo.Arguments = string.Format("x -o+ \"{0}\" \"{1}\"", targetFile, txtBoxDezRar.Text);
                     try
                     {
                         // Start the process with the info we specified.
@@ -360,7 +379,7 @@ namespace WinRar
             }
             else
             {
-                for (int x = 0; x < Convert.ToInt32(txtBoxArhivePac.Text); x++)
+                for (int x = 0; x < Convert.ToInt32(txtBoxLimitaDez.Text); x++)
                 {
                     listViewRar.SelectedItems.Clear();
 
@@ -375,11 +394,35 @@ namespace WinRar
                     listViewRar.Select();
                     listViewRar.EnsureVisible(x);
 
-                    string targetArchiveName = txtBoxLocationLoad.Text + "/" + listViewRar.Items[x].SubItems[0].Text,
+                    //string targetArchiveName = txtBoxLocationLoad.Text + "/" + listViewRar.Items[x].SubItems[0].Text,
+                    //targetFile = listViewRar.Items[x].SubItems[1].Text;
+                    //myString = myString.Remove(myString.Length - 3, 3);
+                    string denumire = listViewRar.Items[x].SubItems[0].Text;
+                    string denumireFaraExt = denumire.Remove(denumire.Length - 4, 4);
+                    string targetArchiveName = txtBoxLocationLoad.Text + "/" + denumireFaraExt,
                     targetFile = listViewRar.Items[x].SubItems[1].Text;
+                    //ProcessStartInfo startInfo = new ProcessStartInfo("WinRAR.exe");
+                    //startInfo.WindowStyle = ProcessWindowStyle.Maximized;
+                    //startInfo.Arguments = string.Format("a -ibck \"{0}\" \"{1}\"", targetArchiveName, targetFile);
+                    // startInfo.Arguments = string.Format("x -s \"{0}\" \"{1}\"", targetArchiveName, targetFile);
+
+                    //System.Diagnostics.Process P_WinRar = new System.Diagnostics.Process();
+                    //P_WinRar.StartInfo.FileName = @"C:\Program Files\WinRAR\WinRAR.exe";
+                    //P_WinRar.StartInfo.CreateNoWindow = false;
+
+                    
+
+                    //P_WinRar.StartInfo.Arguments = string.Format("x -o+ \"{0}\" \"{1}\"", targetFile, targetArchiveName);
+                    //P_WinRar.EnableRaisingEvents = true;
+                    //P_WinRar.Start();
+
+                    //string targetArchiveName = txtBoxLocationLoad.Text + "/" + listViewRar.Items[x].SubItems[0].Text,
+                    //targetFile = listViewRar.Items[x].SubItems[1].Text;
                     ProcessStartInfo startInfo = new ProcessStartInfo("WinRAR.exe");
+                    startInfo.CreateNoWindow = false;
                     startInfo.WindowStyle = ProcessWindowStyle.Maximized;
-                    startInfo.Arguments = string.Format("x -ibck \"{0}\" \"{1}\"", targetArchiveName, targetFile);
+                    ////startInfo.Arguments = string.Format("x -ibck \"{0}\" \"{1}\"", targetArchiveName, targetFile);
+                    startInfo.Arguments = string.Format("x -o+ \"{0}\" \"{1}\"", targetFile, txtBoxDezRar.Text);
                     try
                     {
                         // Start the process with the info we specified.
