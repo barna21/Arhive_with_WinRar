@@ -26,6 +26,8 @@ namespace WinRar
         public string FolderDezArhivat = @"C:\Users\Barni\Desktop\GitHub\ArhiveWinRar\WinRar\bin\Debug\archive.rar";
         public string DeArhivat = @"C:\Users\Barni\Downloads\03Toamna\";
 
+        private string PassArhivare = "d2Zd3nxmYF8STv*7bHVQnZpudC8MgK%ZuqdkKDNGM5TMuUp89";
+
         private void button1_Click(object sender, EventArgs e)
         {
             //string folder = Application.StartupPath + "/archive.rar";
@@ -152,7 +154,7 @@ namespace WinRar
                     ProcessStartInfo startInfo = new ProcessStartInfo("WinRAR.exe");
                     startInfo.WindowStyle = ProcessWindowStyle.Maximized;
                     //startInfo.Arguments = string.Format("a -m5 \"{0}\" \"{1}\"", targetArchiveName, targetFile);
-                    startInfo.Arguments = string.Format("a -ep1 -m5 \"{0}\" \"{1}\"", targetArchiveName, targetFile);
+                    startInfo.Arguments = string.Format("a -ep1 -m5 -pd2Zd3nxmYF8STv*7bHVQnZpudC8MgK%ZuqdkKDNGM5TMuUp89 \"{0}\" \"{1}\"", targetArchiveName, targetFile);
 
                     try
                     {
@@ -345,7 +347,7 @@ namespace WinRar
                     startInfo.CreateNoWindow = false;
                     startInfo.WindowStyle = ProcessWindowStyle.Maximized;
                     ////startInfo.Arguments = string.Format("x -ibck \"{0}\" \"{1}\"", targetArchiveName, targetFile);
-                    startInfo.Arguments = string.Format("x -o+ \"{0}\" \"{1}\"", targetFile, txtBoxDezRar.Text);
+                    startInfo.Arguments = string.Format("x -o+ -pd2Zd3nxmYF8STv*7bHVQnZpudC8MgK%ZuqdkKDNGM5TMuUp89 \"{0}\" \"{1}\"", targetFile, txtBoxDezRar.Text);
                     try
                     {
                         // Start the process with the info we specified.

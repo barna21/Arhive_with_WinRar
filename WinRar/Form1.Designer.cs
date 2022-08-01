@@ -158,7 +158,7 @@
             this.lblPacientiGasiti.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPacientiGasiti.Location = new System.Drawing.Point(798, 42);
             this.lblPacientiGasiti.Name = "lblPacientiGasiti";
-            this.lblPacientiGasiti.Size = new System.Drawing.Size(16, 16);
+            this.lblPacientiGasiti.Size = new System.Drawing.Size(15, 16);
             this.lblPacientiGasiti.TabIndex = 7;
             this.lblPacientiGasiti.Text = "0";
             // 
@@ -230,7 +230,7 @@
             this.lblArhivatiCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblArhivatiCount.Location = new System.Drawing.Point(798, 74);
             this.lblArhivatiCount.Name = "lblArhivatiCount";
-            this.lblArhivatiCount.Size = new System.Drawing.Size(16, 16);
+            this.lblArhivatiCount.Size = new System.Drawing.Size(15, 16);
             this.lblArhivatiCount.TabIndex = 15;
             this.lblArhivatiCount.Text = "0";
             // 
@@ -343,7 +343,7 @@
             this.lblDezarhivati.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDezarhivati.Location = new System.Drawing.Point(810, 75);
             this.lblDezarhivati.Name = "lblDezarhivati";
-            this.lblDezarhivati.Size = new System.Drawing.Size(16, 16);
+            this.lblDezarhivati.Size = new System.Drawing.Size(15, 16);
             this.lblDezarhivati.TabIndex = 30;
             this.lblDezarhivati.Text = "0";
             // 
@@ -445,7 +445,7 @@
             this.lblArhiveGasite.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblArhiveGasite.Location = new System.Drawing.Point(810, 43);
             this.lblArhiveGasite.Name = "lblArhiveGasite";
-            this.lblArhiveGasite.Size = new System.Drawing.Size(16, 16);
+            this.lblArhiveGasite.Size = new System.Drawing.Size(15, 16);
             this.lblArhiveGasite.TabIndex = 22;
             this.lblArhiveGasite.Text = "0";
             // 
@@ -467,7 +467,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Arhivare XVI - v. 1.07";
+            this.Text = "Arhivare XVI - v. 1.08";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
