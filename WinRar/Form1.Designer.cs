@@ -551,6 +551,7 @@
             this.btnSaveReArch.TabIndex = 46;
             this.btnSaveReArch.Text = "Save";
             this.btnSaveReArch.UseVisualStyleBackColor = true;
+            this.btnSaveReArch.Click += new System.EventHandler(this.btnSaveReArch_Click);
             // 
             // label11
             // 
@@ -586,6 +587,7 @@
             this.btnReArch.TabIndex = 42;
             this.btnReArch.Text = "RE-Arhivare LISTA";
             this.btnReArch.UseVisualStyleBackColor = true;
+            this.btnReArch.Click += new System.EventHandler(this.btnReArch_Click);
             // 
             // btnLoadReArch
             // 
@@ -595,6 +597,7 @@
             this.btnLoadReArch.TabIndex = 34;
             this.btnLoadReArch.Text = "Load RAR";
             this.btnLoadReArch.UseVisualStyleBackColor = true;
+            this.btnLoadReArch.Click += new System.EventHandler(this.btnLoadReArch_Click);
             // 
             // checkBoxDeleteReArch
             // 
