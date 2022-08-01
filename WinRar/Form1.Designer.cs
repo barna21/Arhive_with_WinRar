@@ -50,7 +50,9 @@
             this.btnSaveLocation = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.btnStopArhivare = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.btnStopDezarhivare = new System.Windows.Forms.Button();
             this.listViewRar = new System.Windows.Forms.ListView();
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -69,6 +71,7 @@
             this.lblArhiveGasite = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.tabPaGReCript = new System.Windows.Forms.TabPage();
+            this.btnStopRearhivareCript = new System.Windows.Forms.Button();
             this.listViewReArch = new System.Windows.Forms.ListView();
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -278,6 +281,7 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.tabPage1.Controls.Add(this.btnStopArhivare);
             this.tabPage1.Controls.Add(this.listViewFolders);
             this.tabPage1.Controls.Add(this.progressBar);
             this.tabPage1.Controls.Add(this.lblArhivatiCount);
@@ -302,9 +306,20 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Arhivare";
             // 
+            // btnStopArhivare
+            // 
+            this.btnStopArhivare.Location = new System.Drawing.Point(703, 339);
+            this.btnStopArhivare.Name = "btnStopArhivare";
+            this.btnStopArhivare.Size = new System.Drawing.Size(245, 23);
+            this.btnStopArhivare.TabIndex = 48;
+            this.btnStopArhivare.Text = "STOP";
+            this.btnStopArhivare.UseVisualStyleBackColor = true;
+            this.btnStopArhivare.Click += new System.EventHandler(this.btnStopArhivare_Click);
+            // 
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.tabPage2.Controls.Add(this.btnStopDezarhivare);
             this.tabPage2.Controls.Add(this.listViewRar);
             this.tabPage2.Controls.Add(this.progressBarDezarhivare);
             this.tabPage2.Controls.Add(this.lblDezarhivati);
@@ -326,6 +341,16 @@
             this.tabPage2.Size = new System.Drawing.Size(956, 394);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Dezarhivare";
+            // 
+            // btnStopDezarhivare
+            // 
+            this.btnStopDezarhivare.Location = new System.Drawing.Point(705, 340);
+            this.btnStopDezarhivare.Name = "btnStopDezarhivare";
+            this.btnStopDezarhivare.Size = new System.Drawing.Size(245, 23);
+            this.btnStopDezarhivare.TabIndex = 48;
+            this.btnStopDezarhivare.Text = "STOP";
+            this.btnStopDezarhivare.UseVisualStyleBackColor = true;
+            this.btnStopDezarhivare.Click += new System.EventHandler(this.btnStopDezarhivare_Click);
             // 
             // listViewRar
             // 
@@ -480,6 +505,7 @@
             // 
             // tabPaGReCript
             // 
+            this.tabPaGReCript.Controls.Add(this.btnStopRearhivareCript);
             this.tabPaGReCript.Controls.Add(this.listViewReArch);
             this.tabPaGReCript.Controls.Add(this.prgBarReArch);
             this.tabPaGReCript.Controls.Add(this.lblDoneReArch);
@@ -502,6 +528,16 @@
             this.tabPaGReCript.TabIndex = 2;
             this.tabPaGReCript.Text = "Re-Cript arhivare";
             this.tabPaGReCript.UseVisualStyleBackColor = true;
+            // 
+            // btnStopRearhivareCript
+            // 
+            this.btnStopRearhivareCript.Location = new System.Drawing.Point(706, 340);
+            this.btnStopRearhivareCript.Name = "btnStopRearhivareCript";
+            this.btnStopRearhivareCript.Size = new System.Drawing.Size(245, 23);
+            this.btnStopRearhivareCript.TabIndex = 47;
+            this.btnStopRearhivareCript.Text = "STOP";
+            this.btnStopRearhivareCript.UseVisualStyleBackColor = true;
+            this.btnStopRearhivareCript.Click += new System.EventHandler(this.btnStopRearhivareCript_Click);
             // 
             // listViewReArch
             // 
@@ -542,6 +578,7 @@
             this.lblDoneReArch.Size = new System.Drawing.Size(15, 16);
             this.lblDoneReArch.TabIndex = 45;
             this.lblDoneReArch.Text = "0";
+            this.lblDoneReArch.Click += new System.EventHandler(this.lblDoneReArch_Click);
             // 
             // btnSaveReArch
             // 
@@ -602,6 +639,8 @@
             // checkBoxDeleteReArch
             // 
             this.checkBoxDeleteReArch.AutoSize = true;
+            this.checkBoxDeleteReArch.Checked = true;
+            this.checkBoxDeleteReArch.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBoxDeleteReArch.Location = new System.Drawing.Point(709, 171);
             this.checkBoxDeleteReArch.Name = "checkBoxDeleteReArch";
             this.checkBoxDeleteReArch.Size = new System.Drawing.Size(174, 17);
@@ -735,6 +774,9 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label lblPacAvaibleReArch;
         private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Button btnStopArhivare;
+        private System.Windows.Forms.Button btnStopDezarhivare;
+        private System.Windows.Forms.Button btnStopRearhivareCript;
     }
 }
 
