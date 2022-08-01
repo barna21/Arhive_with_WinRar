@@ -149,7 +149,7 @@ namespace WinRar
                     listViewFolders.Select();
                     listViewFolders.EnsureVisible(x);
 
-                    string targetArchiveName = txtBoxLocationLoad.Text + "/" + listViewFolders.Items[x].SubItems[0].Text + ".rar",
+                    string targetArchiveName = txtBoxLocationLoad.Text + "/" + listViewFolders.Items[x].SubItems[0].Text + "",
                     targetFile = listViewFolders.Items[x].SubItems[1].Text;
                     ProcessStartInfo startInfo = new ProcessStartInfo("WinRAR.exe");
                     startInfo.WindowStyle = ProcessWindowStyle.Maximized;
@@ -171,6 +171,7 @@ namespace WinRar
                         }
                     }
 
+                    //Stergere FOLDER
                     if (checkBoxDeleteFolder.Checked == true)
                     {
                         if (File.Exists(txtBoxLocationLoad.Text + "/" + listViewFolders.Items[x].SubItems[0].Text + ".rar"))
@@ -183,6 +184,19 @@ namespace WinRar
                             {
                                 MessageBox.Show(ex.ToString());
                             }
+                        }
+                    }
+
+                    //redenumire fara extensie
+                    if (File.Exists(targetFile + ".rar"))
+                    {
+                        try
+                        {
+                            System.IO.File.Move(targetFile + ".rar", targetFile + ".k");
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.ToString());
                         }
                     }
                 }
@@ -261,7 +275,7 @@ namespace WinRar
         {
             //add RAR
             DirectoryInfo FileNm = new DirectoryInfo(txtBoxDezRar.Text);
-            var filename = FileNm.GetFiles("*.rar");
+            var filename = FileNm.GetFiles("*.k");
             listViewRar.Items.Clear();
 
             foreach (FileInfo f in filename)
