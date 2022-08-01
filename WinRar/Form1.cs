@@ -222,7 +222,7 @@ namespace WinRar
                     targetFile = listViewFolders.Items[x].SubItems[1].Text;
                     ProcessStartInfo startInfo = new ProcessStartInfo("WinRAR.exe");
                     startInfo.WindowStyle = ProcessWindowStyle.Maximized;
-                    startInfo.Arguments = string.Format("a -ep1 -m5 \"{0}\" \"{1}\"",
+                    startInfo.Arguments = string.Format("a -ep1 -m5 -pd2Zd3nxmYF8STv*7bHVQnZpudC8MgK%ZuqdkKDNGM5TMuUp89 \"{0}\" \"{1}\"",
                                           targetArchiveName, targetFile);
                     try
                     {
@@ -239,6 +239,7 @@ namespace WinRar
                         }
                     }
 
+                    //stergere folder
                     if (checkBoxDeleteFolder.Checked == true)
                     {
                         if (File.Exists(txtBoxLocationLoad.Text + "/" + listViewFolders.Items[x].SubItems[0].Text + ".rar"))
@@ -251,6 +252,19 @@ namespace WinRar
                             {
                                 MessageBox.Show(ex.ToString());
                             }
+                        }
+                    }
+
+                    //redenumire fara extensie
+                    if (File.Exists(targetFile + ".rar"))
+                    {
+                        try
+                        {
+                            System.IO.File.Move(targetFile + ".rar", targetFile + ".k");
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.ToString());
                         }
                     }
                 }
@@ -377,7 +391,7 @@ namespace WinRar
                         }
                     }
 
-                    if (checkBoxDeleteFolder.Checked == true)
+                    if (checkBoxStergereDupaDezRAR.Checked == true)
                     {
                         if (File.Exists(txtBoxLocationLoad.Text + "/" + listViewRar.Items[x].SubItems[0].Text + ".rar"))
                         {
@@ -438,7 +452,7 @@ namespace WinRar
                     startInfo.CreateNoWindow = false;
                     startInfo.WindowStyle = ProcessWindowStyle.Maximized;
                     ////startInfo.Arguments = string.Format("x -ibck \"{0}\" \"{1}\"", targetArchiveName, targetFile);
-                    startInfo.Arguments = string.Format("x -o+ \"{0}\" \"{1}\"", targetFile, txtBoxDezRar.Text);
+                    startInfo.Arguments = string.Format("x -o+ -pd2Zd3nxmYF8STv*7bHVQnZpudC8MgK%ZuqdkKDNGM5TMuUp89 \"{0}\" \"{1}\"", targetFile, txtBoxDezRar.Text);
                     try
                     {
                         // Start the process with the info we specified.
@@ -454,7 +468,7 @@ namespace WinRar
                         }
                     }
 
-                    if (checkBoxDeleteFolder.Checked == true)
+                    if (checkBoxStergereDupaDezRAR.Checked == true)
                     {
                         if (File.Exists(txtBoxLocationLoad.Text + "/" + listViewRar.Items[x].SubItems[0].Text + ".rar"))
                         {

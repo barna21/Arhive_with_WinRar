@@ -68,9 +68,28 @@
             this.label10 = new System.Windows.Forms.Label();
             this.lblArhiveGasite = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
+            this.tabPaGReCript = new System.Windows.Forms.TabPage();
+            this.listViewReArch = new System.Windows.Forms.ListView();
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.prgBarReArch = new System.Windows.Forms.ProgressBar();
+            this.lblDoneReArch = new System.Windows.Forms.Label();
+            this.btnSaveReArch = new System.Windows.Forms.Button();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txtBoxPathReArch = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.btnReArch = new System.Windows.Forms.Button();
+            this.btnLoadReArch = new System.Windows.Forms.Button();
+            this.checkBoxDeleteReArch = new System.Windows.Forms.CheckBox();
+            this.txtBoxFirstReArch = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.lblPacAvaibleReArch = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            this.tabPaGReCript.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -248,6 +267,7 @@
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPaGReCript);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
@@ -458,6 +478,179 @@
             this.label12.TabIndex = 23;
             this.label12.Text = "Dezarhiveaza primii:";
             // 
+            // tabPaGReCript
+            // 
+            this.tabPaGReCript.Controls.Add(this.listViewReArch);
+            this.tabPaGReCript.Controls.Add(this.prgBarReArch);
+            this.tabPaGReCript.Controls.Add(this.lblDoneReArch);
+            this.tabPaGReCript.Controls.Add(this.btnSaveReArch);
+            this.tabPaGReCript.Controls.Add(this.label11);
+            this.tabPaGReCript.Controls.Add(this.txtBoxPathReArch);
+            this.tabPaGReCript.Controls.Add(this.label13);
+            this.tabPaGReCript.Controls.Add(this.btnReArch);
+            this.tabPaGReCript.Controls.Add(this.btnLoadReArch);
+            this.tabPaGReCript.Controls.Add(this.checkBoxDeleteReArch);
+            this.tabPaGReCript.Controls.Add(this.txtBoxFirstReArch);
+            this.tabPaGReCript.Controls.Add(this.label14);
+            this.tabPaGReCript.Controls.Add(this.label15);
+            this.tabPaGReCript.Controls.Add(this.lblPacAvaibleReArch);
+            this.tabPaGReCript.Controls.Add(this.label17);
+            this.tabPaGReCript.Location = new System.Drawing.Point(4, 22);
+            this.tabPaGReCript.Name = "tabPaGReCript";
+            this.tabPaGReCript.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPaGReCript.Size = new System.Drawing.Size(956, 394);
+            this.tabPaGReCript.TabIndex = 2;
+            this.tabPaGReCript.Text = "Re-Cript arhivare";
+            this.tabPaGReCript.UseVisualStyleBackColor = true;
+            // 
+            // listViewReArch
+            // 
+            this.listViewReArch.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader5,
+            this.columnHeader6});
+            this.listViewReArch.HideSelection = false;
+            this.listViewReArch.Location = new System.Drawing.Point(11, 32);
+            this.listViewReArch.Name = "listViewReArch";
+            this.listViewReArch.Size = new System.Drawing.Size(689, 331);
+            this.listViewReArch.TabIndex = 35;
+            this.listViewReArch.UseCompatibleStateImageBehavior = false;
+            this.listViewReArch.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "Nume folder:";
+            this.columnHeader5.Width = 137;
+            // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "Path";
+            this.columnHeader6.Width = 776;
+            // 
+            // prgBarReArch
+            // 
+            this.prgBarReArch.Location = new System.Drawing.Point(6, 369);
+            this.prgBarReArch.Name = "prgBarReArch";
+            this.prgBarReArch.Size = new System.Drawing.Size(945, 18);
+            this.prgBarReArch.TabIndex = 43;
+            // 
+            // lblDoneReArch
+            // 
+            this.lblDoneReArch.AutoSize = true;
+            this.lblDoneReArch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDoneReArch.Location = new System.Drawing.Point(810, 75);
+            this.lblDoneReArch.Name = "lblDoneReArch";
+            this.lblDoneReArch.Size = new System.Drawing.Size(15, 16);
+            this.lblDoneReArch.TabIndex = 45;
+            this.lblDoneReArch.Text = "0";
+            // 
+            // btnSaveReArch
+            // 
+            this.btnSaveReArch.Location = new System.Drawing.Point(805, 7);
+            this.btnSaveReArch.Name = "btnSaveReArch";
+            this.btnSaveReArch.Size = new System.Drawing.Size(65, 23);
+            this.btnSaveReArch.TabIndex = 46;
+            this.btnSaveReArch.Text = "Save";
+            this.btnSaveReArch.UseVisualStyleBackColor = true;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(710, 77);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(97, 13);
+            this.label11.TabIndex = 44;
+            this.label11.Text = "Pacienti re-arhivati:";
+            // 
+            // txtBoxPathReArch
+            // 
+            this.txtBoxPathReArch.Location = new System.Drawing.Point(99, 9);
+            this.txtBoxPathReArch.Name = "txtBoxPathReArch";
+            this.txtBoxPathReArch.Size = new System.Drawing.Size(700, 20);
+            this.txtBoxPathReArch.TabIndex = 32;
+            this.txtBoxPathReArch.Text = "\\\\10.200.10.65\\Archive\\XVI\\2014-12-06";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(10, 12);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(88, 13);
+            this.label13.TabIndex = 33;
+            this.label13.Text = "Cautare arhivare:";
+            // 
+            // btnReArch
+            // 
+            this.btnReArch.Location = new System.Drawing.Point(844, 194);
+            this.btnReArch.Name = "btnReArch";
+            this.btnReArch.Size = new System.Drawing.Size(101, 23);
+            this.btnReArch.TabIndex = 42;
+            this.btnReArch.Text = "RE-Arhivare LISTA";
+            this.btnReArch.UseVisualStyleBackColor = true;
+            // 
+            // btnLoadReArch
+            // 
+            this.btnLoadReArch.Location = new System.Drawing.Point(876, 7);
+            this.btnLoadReArch.Name = "btnLoadReArch";
+            this.btnLoadReArch.Size = new System.Drawing.Size(75, 23);
+            this.btnLoadReArch.TabIndex = 34;
+            this.btnLoadReArch.Text = "Load RAR";
+            this.btnLoadReArch.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxDeleteReArch
+            // 
+            this.checkBoxDeleteReArch.AutoSize = true;
+            this.checkBoxDeleteReArch.Location = new System.Drawing.Point(709, 171);
+            this.checkBoxDeleteReArch.Name = "checkBoxDeleteReArch";
+            this.checkBoxDeleteReArch.Size = new System.Drawing.Size(174, 17);
+            this.checkBoxDeleteReArch.TabIndex = 41;
+            this.checkBoxDeleteReArch.Text = "Dupa dezarhivare sterge arhiva";
+            this.checkBoxDeleteReArch.UseVisualStyleBackColor = true;
+            // 
+            // txtBoxFirstReArch
+            // 
+            this.txtBoxFirstReArch.Location = new System.Drawing.Point(813, 145);
+            this.txtBoxFirstReArch.Name = "txtBoxFirstReArch";
+            this.txtBoxFirstReArch.Size = new System.Drawing.Size(88, 20);
+            this.txtBoxFirstReArch.TabIndex = 39;
+            this.txtBoxFirstReArch.Text = "0";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(906, 148);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(44, 13);
+            this.label14.TabIndex = 40;
+            this.label14.Text = "pacienti";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(710, 45);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(75, 13);
+            this.label15.TabIndex = 36;
+            this.label15.Text = "Pacienti gasiti:";
+            // 
+            // lblPacAvaibleReArch
+            // 
+            this.lblPacAvaibleReArch.AutoSize = true;
+            this.lblPacAvaibleReArch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPacAvaibleReArch.Location = new System.Drawing.Point(810, 43);
+            this.lblPacAvaibleReArch.Name = "lblPacAvaibleReArch";
+            this.lblPacAvaibleReArch.Size = new System.Drawing.Size(15, 16);
+            this.lblPacAvaibleReArch.TabIndex = 37;
+            this.lblPacAvaibleReArch.Text = "0";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(706, 148);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(101, 13);
+            this.label17.TabIndex = 38;
+            this.label17.Text = "Dezarhiveaza primii:";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -467,13 +660,15 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Arhivare XVI - v. 1.08";
+            this.Text = "Arhivare XVI - v. 1.10";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            this.tabPaGReCript.ResumeLayout(false);
+            this.tabPaGReCript.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -519,6 +714,24 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label lblArhiveGasite;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TabPage tabPaGReCript;
+        private System.Windows.Forms.ListView listViewReArch;
+        private System.Windows.Forms.ColumnHeader columnHeader5;
+        private System.Windows.Forms.ColumnHeader columnHeader6;
+        private System.Windows.Forms.ProgressBar prgBarReArch;
+        private System.Windows.Forms.Label lblDoneReArch;
+        private System.Windows.Forms.Button btnSaveReArch;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox txtBoxPathReArch;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Button btnReArch;
+        private System.Windows.Forms.Button btnLoadReArch;
+        private System.Windows.Forms.CheckBox checkBoxDeleteReArch;
+        private System.Windows.Forms.TextBox txtBoxFirstReArch;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label lblPacAvaibleReArch;
+        private System.Windows.Forms.Label label17;
     }
 }
 
