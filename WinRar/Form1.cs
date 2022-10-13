@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
 
 namespace WinRar
 {
@@ -23,6 +24,7 @@ namespace WinRar
         Thread Thread_ARHIVARE;
         Thread Thread_DEZARHIVARE;
         Thread Thread_ReArchWithPass;
+        Thread Thread_ReDenumire;
 
         public string FolderDezArhivat = @"C:\Users\Barni\Desktop\GitHub\ArhiveWinRar\WinRar\bin\Debug\archive.rar";
         public string DeArhivat = @"C:\Users\Barni\Downloads\03Toamna\";
@@ -165,7 +167,15 @@ namespace WinRar
                     string targetArchiveName = txtBoxLocationLoad.Text + "/" + listViewFolders.Items[x].SubItems[0].Text + "",
                     targetFile = listViewFolders.Items[x].SubItems[1].Text;
                     ProcessStartInfo startInfo = new ProcessStartInfo("WinRAR.exe");
-                    startInfo.WindowStyle = ProcessWindowStyle.Maximized;
+                    if (checkBoxArhivareViz.Checked == true)
+                    {
+                        startInfo.WindowStyle = ProcessWindowStyle.Normal;
+                    }
+                    else
+                    {
+                        startInfo.WindowStyle = ProcessWindowStyle.Hidden;
+                    }
+
                     //startInfo.Arguments = string.Format("a -m5 \"{0}\" \"{1}\"", targetArchiveName, targetFile);
                     startInfo.Arguments = string.Format("a -ep1 -m5 -pd2Zd3nxmYF8STv*7bHVQnZpudC8MgK%ZuqdkKDNGM5TMuUp89 \"{0}\" \"{1}\"", targetArchiveName, targetFile);
 
@@ -241,7 +251,16 @@ namespace WinRar
                     string targetArchiveName = txtBoxLocationLoad.Text + "/" + listViewFolders.Items[x].SubItems[0].Text + ".rar",
                     targetFile = listViewFolders.Items[x].SubItems[1].Text;
                     ProcessStartInfo startInfo = new ProcessStartInfo("WinRAR.exe");
-                    startInfo.WindowStyle = ProcessWindowStyle.Maximized;
+
+                    if (checkBoxArhivareViz.Checked == true)
+                    {
+                        startInfo.WindowStyle = ProcessWindowStyle.Normal;
+                    }
+                    else
+                    {
+                        startInfo.WindowStyle = ProcessWindowStyle.Hidden;
+                    }
+
                     startInfo.Arguments = string.Format("a -ep1 -m5 -pd2Zd3nxmYF8STv*7bHVQnZpudC8MgK%ZuqdkKDNGM5TMuUp89 \"{0}\" \"{1}\"",
                                           targetArchiveName, targetFile);
                     try
@@ -635,7 +654,15 @@ namespace WinRar
                         
                         ProcessStartInfo startInfo = new ProcessStartInfo("WinRAR.exe");
                         startInfo.CreateNoWindow = false;
-                        startInfo.WindowStyle = ProcessWindowStyle.Maximized;
+                        if (checkBoxArhivareVizibila.Checked == true)
+                        {
+                            startInfo.WindowStyle = ProcessWindowStyle.Normal;
+                        }
+                        else
+                        {
+                            startInfo.WindowStyle = ProcessWindowStyle.Hidden;
+                        }
+
                         startInfo.Arguments = string.Format("x -o+ \"{0}\" \"{1}\"", targetFile, txtBoxPathReArch.Text);
                         
                         try
@@ -673,7 +700,15 @@ namespace WinRar
                         //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
                         ProcessStartInfo startInfoReArch = new ProcessStartInfo("WinRAR.exe");
-                        startInfoReArch.WindowStyle = ProcessWindowStyle.Maximized;
+
+                        if (checkBoxArhivareVizibila.Checked == true)
+                        {
+                            startInfoReArch.WindowStyle = ProcessWindowStyle.Normal;
+                        }
+                        else
+                        {
+                            startInfoReArch.WindowStyle = ProcessWindowStyle.Hidden;
+                        }
 
                         startInfoReArch.Arguments = string.Format("a -ep1 -m5 -pd2Zd3nxmYF8STv*7bHVQnZpudC8MgK%ZuqdkKDNGM5TMuUp89 \"{0}\" \"{1}\"", targetFile, targetArchiveName);
 
@@ -891,6 +926,65 @@ namespace WinRar
         {
             StopUtilitar = 1;
             btnStopRearhivareCript.Enabled = false;
+        }
+
+        private void btnRename_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (listViewReArch.Items.Count > 0)
+                {
+                    Thread_ReDenumire = new Thread(redenumire_Propriuzisa);
+                    Thread_ReDenumire.Start();
+                }
+                else
+                {
+                    MessageBox.Show("Nu sunt foldere incarcate in aplicatie pentru verificare de redenumire", "Eroare", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                }
+            }
+            catch
+            {
+
+            }
+        }
+
+        public void redenumire_Propriuzisa()
+        {
+            try
+            {
+                for (int i = 0; i < listViewReArch.Items.Count; i++)
+                {
+                    this.Focus();
+                    listViewReArch.Focus();
+
+                    listViewReArch.Items[i].Selected = true;
+                    listViewReArch.Items[i].Focused = true;
+                    listViewReArch.Select();
+                    listViewReArch.EnsureVisible(i);
+
+                    string getDenumireFile = listViewReArch.Items[i].SubItems[0].Text;
+                    string getFilePath = listViewReArch.Items[i].SubItems[1].Text;
+
+                    string getFilePathWithoutFileName =  System.IO.Directory.GetParent(getFilePath).FullName;
+
+                    string[] numeVechiSplit = getDenumireFile.Split(new string[] { "patient" }, StringSplitOptions.None);
+
+                    if (getDenumireFile.Contains("Repaired"))
+                    {
+                        System.IO.File.Move(getFilePath, getFilePathWithoutFileName + "/patient" + numeVechiSplit[1]);
+                    }
+
+                    listViewReArch.SelectedItems.Clear();
+
+                    Thread.Sleep(244);
+                }
+
+                MessageBox.Show("Au fost redenumite toate fisierele cu succes!", "Succes", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            catch(Exception ex)     
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
     }
 }

@@ -71,6 +71,8 @@
             this.lblArhiveGasite = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.tabPaGReCript = new System.Windows.Forms.TabPage();
+            this.checkBoxArhivareVizibila = new System.Windows.Forms.CheckBox();
+            this.btnRename = new System.Windows.Forms.Button();
             this.btnStopRearhivareCript = new System.Windows.Forms.Button();
             this.listViewReArch = new System.Windows.Forms.ListView();
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -89,6 +91,7 @@
             this.label15 = new System.Windows.Forms.Label();
             this.lblPacAvaibleReArch = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
+            this.checkBoxArhivareViz = new System.Windows.Forms.CheckBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -213,7 +216,9 @@
             // checkBoxDeleteFolder
             // 
             this.checkBoxDeleteFolder.AutoSize = true;
-            this.checkBoxDeleteFolder.Location = new System.Drawing.Point(706, 170);
+            this.checkBoxDeleteFolder.Checked = true;
+            this.checkBoxDeleteFolder.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBoxDeleteFolder.Location = new System.Drawing.Point(706, 178);
             this.checkBoxDeleteFolder.Name = "checkBoxDeleteFolder";
             this.checkBoxDeleteFolder.Size = new System.Drawing.Size(162, 17);
             this.checkBoxDeleteFolder.TabIndex = 11;
@@ -222,7 +227,7 @@
             // 
             // btnArhiveLoop
             // 
-            this.btnArhiveLoop.Location = new System.Drawing.Point(841, 193);
+            this.btnArhiveLoop.Location = new System.Drawing.Point(841, 232);
             this.btnArhiveLoop.Name = "btnArhiveLoop";
             this.btnArhiveLoop.Size = new System.Drawing.Size(101, 23);
             this.btnArhiveLoop.TabIndex = 12;
@@ -281,6 +286,7 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.tabPage1.Controls.Add(this.checkBoxArhivareViz);
             this.tabPage1.Controls.Add(this.btnStopArhivare);
             this.tabPage1.Controls.Add(this.listViewFolders);
             this.tabPage1.Controls.Add(this.progressBar);
@@ -505,6 +511,9 @@
             // 
             // tabPaGReCript
             // 
+            this.tabPaGReCript.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPaGReCript.Controls.Add(this.checkBoxArhivareVizibila);
+            this.tabPaGReCript.Controls.Add(this.btnRename);
             this.tabPaGReCript.Controls.Add(this.btnStopRearhivareCript);
             this.tabPaGReCript.Controls.Add(this.listViewReArch);
             this.tabPaGReCript.Controls.Add(this.prgBarReArch);
@@ -527,7 +536,26 @@
             this.tabPaGReCript.Size = new System.Drawing.Size(956, 394);
             this.tabPaGReCript.TabIndex = 2;
             this.tabPaGReCript.Text = "Re-Cript arhivare";
-            this.tabPaGReCript.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxArhivareVizibila
+            // 
+            this.checkBoxArhivareVizibila.AutoSize = true;
+            this.checkBoxArhivareVizibila.Location = new System.Drawing.Point(709, 194);
+            this.checkBoxArhivareVizibila.Name = "checkBoxArhivareVizibila";
+            this.checkBoxArhivareVizibila.Size = new System.Drawing.Size(99, 17);
+            this.checkBoxArhivareVizibila.TabIndex = 49;
+            this.checkBoxArhivareVizibila.Text = "Arhivare vizibila";
+            this.checkBoxArhivareVizibila.UseVisualStyleBackColor = true;
+            // 
+            // btnRename
+            // 
+            this.btnRename.Location = new System.Drawing.Point(713, 231);
+            this.btnRename.Name = "btnRename";
+            this.btnRename.Size = new System.Drawing.Size(101, 23);
+            this.btnRename.TabIndex = 48;
+            this.btnRename.Text = "Redenumire";
+            this.btnRename.UseVisualStyleBackColor = true;
+            this.btnRename.Click += new System.EventHandler(this.btnRename_Click);
             // 
             // btnStopRearhivareCript
             // 
@@ -618,7 +646,7 @@
             // 
             // btnReArch
             // 
-            this.btnReArch.Location = new System.Drawing.Point(844, 194);
+            this.btnReArch.Location = new System.Drawing.Point(847, 231);
             this.btnReArch.Name = "btnReArch";
             this.btnReArch.Size = new System.Drawing.Size(101, 23);
             this.btnReArch.TabIndex = 42;
@@ -693,6 +721,16 @@
             this.label17.TabIndex = 38;
             this.label17.Text = "Dezarhiveaza primii:";
             // 
+            // checkBoxArhivareViz
+            // 
+            this.checkBoxArhivareViz.AutoSize = true;
+            this.checkBoxArhivareViz.Location = new System.Drawing.Point(706, 201);
+            this.checkBoxArhivareViz.Name = "checkBoxArhivareViz";
+            this.checkBoxArhivareViz.Size = new System.Drawing.Size(99, 17);
+            this.checkBoxArhivareViz.TabIndex = 50;
+            this.checkBoxArhivareViz.Text = "Arhivare vizibila";
+            this.checkBoxArhivareViz.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -702,7 +740,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Arhivare XVI - v. 1.10";
+            this.Text = "Arhivare XVI - v. 1.14";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
@@ -777,6 +815,9 @@
         private System.Windows.Forms.Button btnStopArhivare;
         private System.Windows.Forms.Button btnStopDezarhivare;
         private System.Windows.Forms.Button btnStopRearhivareCript;
+        private System.Windows.Forms.CheckBox checkBoxArhivareVizibila;
+        private System.Windows.Forms.Button btnRename;
+        private System.Windows.Forms.CheckBox checkBoxArhivareViz;
     }
 }
 
