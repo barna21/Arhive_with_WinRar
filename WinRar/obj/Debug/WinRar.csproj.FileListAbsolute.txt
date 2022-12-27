@@ -16,3 +16,14 @@ C:\Users\Barni\Desktop\GitHub\ArhiveWinRar\WinRar\obj\Debug\WinRar.csproj.Genera
 C:\Users\Barni\Desktop\GitHub\ArhiveWinRar\WinRar\obj\Debug\WinRar.exe
 C:\Users\Barni\Desktop\GitHub\ArhiveWinRar\WinRar\obj\Debug\WinRar.pdb
 C:\Users\Barni\Desktop\GitHub\ArhiveWinRar\WinRar\obj\Debug\WinRar.csprojAssemblyReference.cache
+D:\GitHub21\Arhive_with_WinRar\WinRar\bin\Debug\WinRar.exe.config
+D:\GitHub21\Arhive_with_WinRar\WinRar\bin\Debug\WinRar.exe
+D:\GitHub21\Arhive_with_WinRar\WinRar\bin\Debug\WinRar.pdb
+D:\GitHub21\Arhive_with_WinRar\WinRar\obj\Debug\WinRar.csproj.AssemblyReference.cache
+D:\GitHub21\Arhive_with_WinRar\WinRar\obj\Debug\WinRar.csproj.SuggestedBindingRedirects.cache
+D:\GitHub21\Arhive_with_WinRar\WinRar\obj\Debug\WinRar.Form1.resources
+D:\GitHub21\Arhive_with_WinRar\WinRar\obj\Debug\WinRar.Properties.Resources.resources
+D:\GitHub21\Arhive_with_WinRar\WinRar\obj\Debug\WinRar.csproj.GenerateResource.cache
+D:\GitHub21\Arhive_with_WinRar\WinRar\obj\Debug\WinRar.csproj.CoreCompileInputs.cache
+D:\GitHub21\Arhive_with_WinRar\WinRar\obj\Debug\WinRar.exe
+D:\GitHub21\Arhive_with_WinRar\WinRar\obj\Debug\WinRar.pdb

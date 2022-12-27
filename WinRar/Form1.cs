@@ -421,7 +421,7 @@ namespace WinRar
                     //targetFile = listViewRar.Items[x].SubItems[1].Text;
                     ProcessStartInfo startInfo = new ProcessStartInfo("WinRAR.exe");
                     startInfo.CreateNoWindow = false;
-                    startInfo.WindowStyle = ProcessWindowStyle.Maximized;
+                    startInfo.WindowStyle = ProcessWindowStyle.Normal;
                     ////startInfo.Arguments = string.Format("x -ibck \"{0}\" \"{1}\"", targetArchiveName, targetFile);
                     startInfo.Arguments = string.Format("x -o+ -pd2Zd3nxmYF8STv*7bHVQnZpudC8MgK%ZuqdkKDNGM5TMuUp89 \"{0}\" \"{1}\"", targetFile, txtBoxDezRar.Text);
                     try
@@ -505,7 +505,7 @@ namespace WinRar
                     //targetFile = listViewRar.Items[x].SubItems[1].Text;
                     ProcessStartInfo startInfo = new ProcessStartInfo("WinRAR.exe");
                     startInfo.CreateNoWindow = false;
-                    startInfo.WindowStyle = ProcessWindowStyle.Maximized;
+                    startInfo.WindowStyle = ProcessWindowStyle.Normal;
                     ////startInfo.Arguments = string.Format("x -ibck \"{0}\" \"{1}\"", targetArchiveName, targetFile);
                     startInfo.Arguments = string.Format("x -o+ -pd2Zd3nxmYF8STv*7bHVQnZpudC8MgK%ZuqdkKDNGM5TMuUp89 \"{0}\" \"{1}\"", targetFile, txtBoxDezRar.Text);
                     try
